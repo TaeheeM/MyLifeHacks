@@ -1,0 +1,84 @@
+{
+    "tip":[
+        {
+            "idx":0,
+            "category":"Daily Life",
+            "title":"Keep Leftover Pizza Moist!",
+            "image":"https://storage.googleapis.com/sparta-image.appspot.com/lecture/pizza.png",
+            "desc":"Leftover pizza often loses its moisture, making it less tasty than when it was fresh. To revive it, place a cup of water in the microwave along with the pizza and heat it for about 1.5 to 2 minutes. The steam from the water will help keep the pizza moist.",
+            "date":"08.07.2024"
+        },
+        {
+            "idx":1,
+            "category":"Daily Life",
+            "title":"Keep Bananas Fresh for Longer",
+            "image": "https://storage.googleapis.com/sparta-image.appspot.com/lecture/banana.png",
+            "desc":"To prevent fruit flies and slow down the ripening process, cut off both ends of the banana, seal it in a storage case or plastic bag, and refrigerate it. You can then take out 1-2 bananas each day and enjoy them fresh.",
+            "date":"06.09.2024"
+        },
+        {
+            "idx":2,
+            "category":"Daily Life",
+            "title":"Remove Pen Marks from Shirts",
+            "image": "https://storage.googleapis.com/sparta-image.appspot.com/lecture/shirt.png",
+            "desc":"For those who frequently wear shirts, pen marks are a common issue. A simple way to remove them is by using a stain remover pen. Place a paper towel behind the stained area to prevent spreading, apply the remover to the pen mark, and blot it with the paper towel.",
+            "date":"07.15.2022"
+        },
+        {
+            "idx":3,
+            "category":"Finance",
+            "title":"Find Your Unclaimed Money",
+            "image": "https://storage.googleapis.com/sparta-image.appspot.com/lecture/money1.png",
+            "desc":"‘Leaking money’ includes forgotten card points, dormant accounts, or refunds you didn’t know about. It's important to track down any unclaimed money and gather these small amounts. Check if you have overpaid for services like cable or satellite TV, or if you have unclaimed deposits, such as set-top box deposits. Also, use card point integration services to check how many points you have across multiple cards. Nowadays, it's easy to reclaim insurance refunds, dormant insurance payouts, or dormant deposits.",
+            "date":"03.26.2024"
+        },
+        {
+            "idx":4,
+            "category":"Finance",
+            "title":"Avoid the Traps of Discounts and Limited-Time Offers!",
+            "image": "https://storage.googleapis.com/sparta-image.appspot.com/lecture/money2.png",
+            "desc":"Have you heard the saying, ‘If you don’t buy it, you save 100%’? It's easy to be tempted by good deals, especially during big sales at supermarkets. It's better to buy essentials in small quantities as needed rather than in bulk. Frequent trips to the store can lead to buying more than you need, increasing your spending. Be cautious of phrases like ‘sale’, ‘limited-time discount’, as they often lead to unintended purchases, whether it’s from home shopping networks or large supermarkets.",
+            "date":"04.30.2023"
+        },
+        {
+            "idx":5,
+            "category":"Daily Life",
+            "title":"Revive Dead Batteries",
+            "image": "https://storage.googleapis.com/sparta-image.appspot.com/lecture/battery.png",
+            "desc":"Sometimes, we throw away batteries that haven’t been fully used but seem dead. If the battery still feels heavy, you can revive it using a hairdryer. Apply heat evenly for about 10 to 30 seconds to bring the battery back to life, preventing unnecessary waste.",
+            "date":"11.02.2020"
+        },
+        {
+            "idx":6,
+            "category":"Pets",
+            "title":"Potty Training Your Dog",
+            "image": "https://storage.googleapis.com/sparta-image.appspot.com/lecture/puppy.png",
+            "desc":"Start by placing treats on the potty pads in a sequence. In the next step, wait near the pad and reward your dog with a treat when it steps onto the pad. After that, add a command like 'Go to the bathroom' or 'Mat', and give a treat when the dog steps onto the pad. Finally, reward your dog with a treat after it uses the pad, so it associates the pad with a positive experience. It's important to change the pad after 1 or 2 uses to maintain cleanliness.",
+            "date":"09.01.2021"
+        },
+        {
+            "idx":7,
+            "category":"Pets",
+            "title":"When Your Dog Fears Separation",
+            "image": "https://storage.googleapis.com/sparta-image.appspot.com/lecture/puppy2.png",
+            "desc":"Separation anxiety training is not about teaching your dog to be alone, but rather assuring them that ‘I will always come back to you.’ Use the ‘5, 10, 7 rule,’ where you leave your dog alone for 5 seconds, then return and let it smell your hand. Repeat this 10 times a day for 7 days. This can help soothe your dog’s anxiety.",
+            "date":"09.14.2024"
+        },
+        {
+            "idx":8,
+            "category":"Pets",
+            "title":"Raising a Dog with Children",
+            "image": "https://storage.googleapis.com/sparta-image.appspot.com/lecture/puppy3.png",
+            "desc":"There has been ongoing criticism of raising pets for the ‘happiness of humans’. He particularly advises parents who want to raise a dog for their children's emotional development. ‘If raising a pet improves a child’s emotional state, it's because the child observes their parents caring for a being that looks, feels, and behaves differently from humans.’ It is the responsibility of humans to make sure these animals, which live with us due to our choices, live happy lives, and that depends on our efforts.",
+            "date":"12.31.2020"
+        },
+        {
+            "idx":9,
+            "category":"Finance",
+            "title":"Compare Rental Service Costs",
+            "image": "https://img.freepik.com/premium-photo/cost-estate-service-text-providing-real-estate-services-acquisition-rental-housing_507676-2219.jpg",
+            "desc":"Nowadays, rental services for everything from water purifiers and air purifiers to cars and toys are booming. While renting may seem more economical than buying, these costs can add up quickly. Rental fees often include maintenance costs, making them less affordable than they seem. Consider if you can manage certain items yourself instead of renting, and compare the costs of renting versus buying and maintaining items.",
+            "date":"02.03.2020"
+        }
+    ]
+}
