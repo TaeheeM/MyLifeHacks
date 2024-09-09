@@ -4,6 +4,8 @@ import React from 'react';
 // import MainPage from './pages/MainPage';
 // import DetailPage from './pages/DetailPage';
 import { StatusBar } from 'expo-status-bar';
+import { createStackNavigator } from '@react-navigation/stack';
+
 
 //메인에 세팅할 네비게이션 도구들을 가져옵니다.
 import {NavigationContainer} from '@react-navigation/native';
@@ -14,8 +16,19 @@ export default function App() {
   console.disableYellowBox = true;
 
   return ( 
-  <NavigationContainer>
+  <NavigationContainer> 
+    {/* NavigationContainer: 네비게이션을 관리하는 컨테이너로, 앱에서 네비게이션을 사용할 때 가장 바깥에 위치해야 합니다. */}
+    
     <StatusBar style="black" />
-    <StackNavigator/>
- </NavigationContainer>);
+    {/* StatusBar: 상태 표시줄(배터리, 시간, WiFi 표시되는 부분)의 스타일을 설정합니다. */}
+
+    <StackNavigator/> 
+    {/* StackNavigator: Stack Navigator를 통해 화면 간의 전환을 관리하고, 여러 **화면(Screen)**을 쌓아가는 구조로 화면을 전환할 수 있게 합니다. */}
+ </NavigationContainer>
+ 
+
+
+);
+
 }
+

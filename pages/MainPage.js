@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context'; // SsafeAreaView = a component (pre-built element), it can be brought from the react libraries. 
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context'; // SafeAreaView = a component (pre-built element), it can be brought from the react libraries. 
 
 // const main_pic = 'https://storage.googleapis.com/sparta-image.appspot.com/lecture/main.png'
 import data from '../data.json'; // App.js and data.json is on the same level. That's why ./ was used, if data.json are on the higher level, the code should start with ../
@@ -8,7 +8,10 @@ import Card from '../components/Card';
 import Loading from '../components/Loading';
 import { StatusBar } from 'expo-status-bar';
 
-
+  
+// React에서 함수형 컴포넌트는 props라는 객체를 매개변수로 받습니다. props에는 해당 컴포넌트에 전달된 다양한 정보들이 담겨 있어요. 여기서 우리는 navigation과 route라는 두 가지 값만 추출해서 사용하기 위해 중괄호 {}를 사용한 거예요.
+//**navigation**은 React Navigation이 각 화면에 자동으로 전달해 주는 객체입니다. 이 객체에는 화면 간의 이동, 이전 화면으로 돌아가기, 옵션 설정 등 여러 가지 내비게이션 관련 기능들이 포함되어 있어요. (no need to import it is a props provided from React)
+// Props: They are passed from parent to child: A parent provides values, and the child receives them as props.
 export default function MainPage({ navigation, route }) {
 
     //useState 사용법
@@ -78,6 +81,9 @@ export default function MainPage({ navigation, route }) {
             {/* Weather */}
             <Text style={styles.weather}>Today's Weather: {todayWeather + '°C ' + todayCondition}</Text>
 
+            {/* About Page */}
+            <TouchableOpacity style={styles.aboutButton} onPress={()=> {navigation.navigate('AboutPage') }}><Text style={styles.aboutText}>About Us</Text></TouchableOpacity>
+
             {/* Tip Image */}
             <Image style={styles.main_pic}
                 source={require('../assets/main_pic.png')}
@@ -103,7 +109,7 @@ export default function MainPage({ navigation, route }) {
                     <Text style={styles.middleButtonText}>Pets</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.middleButton04} onPress={() => { category('Bookmarked Tips') }}>
+                <TouchableOpacity style={styles.middleButton04} onPress={() => {navigation.navigate('LikePage')}}>
                     <Text style={styles.middleButtonText}>Bookmarked Tips</Text>
                 </TouchableOpacity>
             </ScrollView>
@@ -117,6 +123,19 @@ export default function MainPage({ navigation, route }) {
                             //!중요! contents={content}: content 객체를 Card 컴포넌트에 contents라는 이름의 prop으로 전달합니다.
                             //!중요! Card 컴포넌트는 이 contents prop을 받아서 내부적으로 사용합니다:
                             //!중요!{contents}: Card 컴포넌트는 contents prop을 비구조화 할당하여 사용합니다. 즉, contents.image, contents.title, contents.desc, contents.date를 이용해 각각의 데이터를 UI에 반영합니다.        
+                       
+                            // 첫 번째 navigation (왼쪽의 navigation={navigation}): Card 컴포넌트에 전달할 props 이름입니다. (걍 기능 불러온겨)
+                            // 두 번째 navigation (오른쪽의 navigation): MainPage에서 받은 React Navigation의 navigation 객체입니다.
+                            // 따라서 Card 컴포넌트에서도 **navigation.navigate()**를 사용하여 다른 화면으로 이동할 수 있습니다.
+                            // MainPage 컴포넌트는 React Navigation이 자동으로 전달하는 navigation 객체를 받습니다.
+                            // MainPage는 이 navigation 객체를 Card 컴포넌트에 props로 전달합니다. (첫 번째 navigation)
+                            // Card 컴포넌트는 MainPage로부터 전달받은 navigation 객체를 사용해서 다른 화면으로 이동할 수 있습니다. (두 번째 navigation)
+                            // React Navigation ----> MainPage({ navigation }) ----> Card({ navigation })
+                            
+                            //**"카드 페이지(CardPage)에 처음부터 navigation prop을 할당하면 안 되는가? 왜 navigation을 부모 컴포넌트(MainPage)에서 전달하고 있는가?
+                            // React Navigation은 각각의 화면에만 navigation 객체를 자동으로 전달합니다. 예를 들어, MainPage가 React Navigation에 의해 화면으로 등록되어 있기 때문에 **MainPage**는 navigation 객체를 받을 수 있어요.
+                            
+                        
                         )
                     })
                 }
@@ -155,7 +174,26 @@ const styles = StyleSheet.create({
         alignSelf: "flex-end",
         paddingRight: 20,
         color: "gray",
-        fontSize: 11,
+        fontSize: 13,
+        marginTop: 5,
+    },
+
+    aboutButton: {
+        marginRight: 20,
+        marginTop: 10,
+        width: 100,
+        padding: 10,
+        alignContent: 'center',
+        backgroundColor: 'pink',
+        alignSelf: 'flex-end',
+        borderRadius: 10
+    }, 
+    
+    aboutText: {
+        color: 'white',
+        fontSize: 17,
+        fontWeight: "700",
+        textAlign: "center",
     },
 
     main_pic: {
@@ -230,3 +268,11 @@ const styles = StyleSheet.create({
 
 
 });
+
+
+
+
+
+
+
+

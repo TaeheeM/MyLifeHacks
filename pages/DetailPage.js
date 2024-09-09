@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'; // This line imports the React library from the react package. In React (including React Native), you must import React to use JSX (JavaScript XML), which allows you to write HTML-like syntax in JavaScript.
 import { StyleSheet, ScrollView, View, Text, Image, TouchableOpacity, Alert, Share } from 'react-native' // View and Text are built-in components in React Native used to structure and style UI elements. StyleSheet is a module it doesn't render antying 
 import { SafeAreaView } from 'react-native-safe-area-context';
-import * as Linking from 'expo-linking';
+import * as Linking from 'expo-linking'; // 외부 링크로 전달해주는 feature
 
 export default function DetailPage({ navigation, route }) { // React, a function component is a JavaScript function that returns JSX, defining what the UI should look like.
+    // **route**는 화면 간 데이터를 전달받을 때 사용하는 객체입니다. 즉, 다른 화면에서 이 화면으로 이동할 때 넘겨준 데이터를 route.params로 가져옵니다.
+
 
     //초기 컴포넌트의 상태값을 설정
     //state, setState 뿐 아니라 이름을 마음대로 지정할 수 있음!
@@ -24,8 +26,8 @@ export default function DetailPage({ navigation, route }) { // React, a function
         //즉, route.params 는 content죠!
 
         navigation.setOptions({
-            //setOptions로 페이지 타이틀도 지정 가능하고
-            title: route.params.title,
+            //setOptions로 페이지 타이틀도 지정 가능하고 각 card의 title 로 대체 가능
+            title: route.params.title, 
             //StackNavigator에서 작성했던 옵션을 다시 수정할 수도 있습니다. 
             headerStyle: {
                 backgroundColor: '#000',
@@ -34,14 +36,20 @@ export default function DetailPage({ navigation, route }) { // React, a function
             headerTintColor: "#fff",
         })
         setTip(route.params)
+        // **CardPage**에서 사용자가 카드를 클릭하면, **navigation.navigate('DetailPage', contents)**로 **해당 카드의 정보(contents)**가 **DetailPage**로 전달됩니다.
+        // **DetailPage**에서는 **route.params**로 **CardPage**에서 넘어온 데이터를 받을 수 있습니다.
+
     }, [])
+// **useEffect()**는 컴포넌트가 처음 화면에 렌더링될 때 특정 동작을 하도록 만들어 주는 함수입니다. 즉, 페이지가 처음 열렸을 때 이 코드를 한 번 실행해요.
+// **[]**는 한 번만 실행되도록 설정한 부분입니다. 그래서 페이지가 처음 열릴 때 헤더 설정을 바꾸고, 전달받은 데이터를 상태로 저장하는 거죠.
+
 
     const popup = () => {
         Alert.alert("팝업!!")
     }
 
-    const share = () => {
-        Share.share({
+    const share = () => { //팁 공유하기 누르면 tip 타이틀과 description, image 가 elements 전송됨
+        Share.share({ //Share = component like a <View> and share is a function in a "Share" component
             message: `${tip.title} \n\n ${tip.desc} \n\n ${tip.image}`,
         });
     }
